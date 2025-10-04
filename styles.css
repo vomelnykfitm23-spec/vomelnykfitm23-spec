@@ -1,0 +1,199 @@
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fafafa;
+}
+
+header {
+  text-align: center;
+  padding: 1rem;
+  background: #f8d7da;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; 
+  align-self: flex-start;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #f1f1f1;
+}
+
+@media (min-width: 730px) and (max-width: 1199px) {
+  .filters {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  footer {
+    background: #e2e3e5;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .filters {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 2rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: stretch; 
+  }
+
+  .card {
+    justify-content: space-between;
+  }
+
+  .card img {
+    height: 250px;
+    object-fit: cover;
+    align-self: flex-start;
+  }
+
+  footer {
+    background: #d1e7dd;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+  }
+
+    .card { display: none; }
+    #all:checked ~ main .card { display: flex; }
+
+    #all:checked ~ main .card { display:flex; }
+    #cake:checked ~ main .cake { display:flex; }
+    #pastry:checked ~ main .pastry { display:flex; }
+    #roll:checked ~ main .roll { display:flex; }
+
+    #lowcal:checked ~ main .card:not(.low) { display:none; }
+    #highcal:checked ~ main .card:not(.high) { display:none; }
+
+
+  /* Базові стилі */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fafafa;
+}
+
+header {
+  text-align: center;
+  padding: 1rem;
+  background: #f8d7da;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  align-self: flex-start;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #f1f1f1;
+}
+
+/* --- Фільтри через CSS --- */
+.card { display: none; }
+
+/* Тип виробу */
+#all:checked    ~ main .card        { display: flex; }
+#cake:checked   ~ main .card.cake   { display: flex; }
+#pastry:checked ~ main .card.pastry { display: flex; }
+#roll:checked   ~ main .card.roll   { display: flex; }
+
+/* Калорійність */
+#lowcal:checked  ~ main .card:not(.low)  { display: none; }
+#highcal:checked ~ main .card:not(.high) { display: none; }
+
+/* --- Планшети (730–1199px) --- */
+@media (min-width: 730px) and (max-width: 1199px) {
+  .filters { flex-direction: row; justify-content: space-around; }
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+  footer {
+    background: #e2e3e5;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+  }
+}
+
+/* --- Десктопи (≥1200px) --- */
+@media (min-width: 1200px) {
+  .filters { flex-direction: row; justify-content: space-between; padding: 0 2rem; }
+  .gallery { grid-template-columns: repeat(3, 1fr); align-items: stretch; }
+  .card { justify-content: space-between; }
+  .card img { height: 250px; }
+  footer {
+    background: #d1e7dd;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+  }
+}
+}
